@@ -1,0 +1,64 @@
+<% layout("layouts/boilerplate") -%>
+
+
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+            
+            <h3>Create New Listing</h3>
+    <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" name="newObj[title]" placeholder="Enter the title" class="form-control" required>
+
+        <div class="valid-feedback">Title Looks good</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+        <textarea type="text" name="newObj[description]" class="form-control" required></textarea>
+
+        </div>
+
+        
+        <!-- File type image -->
+        <div class="mb-3">
+            <label for="image" class="form-label">Upload Image</label>
+        <input type="file" name="newObj[image][url]" class="form-control" required>
+        
+    
+        </div>
+
+        <!-- Keeping price and country together -->
+        <div class="row">
+        <div class="mb-3 col-md-4" >
+            <label for="price" class="form-label">Price</label>
+
+        <input type="number" name="newObj[price]" placeholder="1200" class="form-control" required>
+            
+        <div class="invalid-feedback">Price should be a valid number</div>
+    
+    </div>
+
+
+        <div class="mb-3 col-md-8">
+            <label for="country" class="form-label">Country</label>
+        <input type="text" name="newObj[country]" placeholder="Pakistan" class="form-control" required>
+        <div class="invalid-feedback">Country name should be valid</div>
+    </div>
+
+        </div>
+
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+        <input type="text" name="newObj[location]" placeholder="Lahore, Punjab" class="form-control" required>
+        
+        <div class="invalid-feedback">Location should be valid</div>
+    </div>
+
+        <br> 
+        <button class="btn btn-dark add-btn mt-3 mb-3">Add Listing</button>
+        
+    </form>
+</div>
+</div>
+
